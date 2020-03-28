@@ -79,7 +79,7 @@ void draw() {
   //robot: laser
   noStroke();
   fill(255, 0, 0);
-  rect(laserX - laserW, laserY, laserW, LASER_H, 5);
+  rect(laserX - laserW, laserY, laserW, LASER_H);
     
   if(laserW >= laserMaxW){
     laserW -= laserSpeed;
