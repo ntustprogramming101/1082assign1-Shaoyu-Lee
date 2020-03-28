@@ -99,8 +99,5 @@ void draw() {
   //soldier
   soldierX += soldierSpeed;
   soldierX %= (width+SOLDIER_W);
-  image(soldier, soldierX-SOLDIER_W, soldierY, SOLDIER_W, SOLDIER_H);  //soldier
-  soldierX += soldierSpeed;
-  soldierX %= (width+SOLDIER_W);
   image(soldier, soldierX-SOLDIER_W, soldierY, SOLDIER_W, SOLDIER_H);
 }
