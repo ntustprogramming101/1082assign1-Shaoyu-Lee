@@ -38,7 +38,7 @@ void setup() {
   groundhogX = width/2 - GROUNDHOG_W/2;
   groundhogY = ONE_BLOCK;
   
-  soldierX = floor(random(1,9))*ONE_BLOCK;
+  soldierX = 0;
   soldierY = floor(random(4))*ONE_BLOCK + ONE_BLOCK*2;
   soldierSpeed = 1;
   
