@@ -46,10 +46,10 @@ void setup() {
   robotY = floor(random(4))*ONE_BLOCK + ONE_BLOCK*2;
   
   laserSpeed = 2;
-  laserW = 0;
   laserMaxW = 40;
   laserX = robotX + 25;
   laserY = robotY + 37;
+  laserW = laserX;
 }
 
 void draw() {
@@ -77,22 +77,18 @@ void draw() {
   image(groundhog, groundhogX, groundhogY, GROUNDHOG_W, GROUNDHOG_H);
   
   //robot: laser
-  noStroke();
-  fill(255, 0, 0);
-  rect(laserX, laserY, laserW, LASER_H, 5);
-    
-  if(laserW <= laserMaxW){
-    laserW += laserSpeed;
-  }
-  if(laserX > robotX - ONE_BLOCK*2){
-    laserX -= laserSpeed;
-  }else{
+  laserX -= laserSpeed;
+  if(laserW > laserX + laserMaxW){
+    laserW = laserX + laserMaxW; //laserMaxW - strokeWeight
+  }  
+  if(laserX <= robotX - ONE_BLOCK*2){
     laserX = robotX + 25;
-    laserY = robotY + 37;
-    laserW = 0;
-    laserW += laserSpeed;
+    laserW = laserX;
   }
-  
+  stroke(255, 0, 0);
+  strokeWeight(10);
+  line(laserX, laserY, laserW, laserY);
+
   //robot
   image(robot, robotX, robotY, ROBOT_W, ROBOT_H);
   
